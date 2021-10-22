@@ -1,3 +1,4 @@
+import 'package:coffee/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -35,16 +36,7 @@ class MyApp extends StatelessWidget {
             bodyColor: Color.fromRGBO(24, 29, 45, 1),
           ),
         ),
-        home: Scaffold(
-          body: Center(
-            child: Column(
-              children: [
-                ElevatedButton(onPressed: () => {}, child: Text('Button')),
-                Text('Text Center'),
-              ],
-            ),
-          ),
-        ),
+        home: WelcomeScreen(),
       ),
     );
   }
