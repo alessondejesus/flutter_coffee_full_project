@@ -51,7 +51,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           borderRadius: BorderRadius.circular(30.0),
         ),
         context: context,
-        builder: (context) => LoginBottomSheet());
+        builder: (context) => loginBottomSheet(context));
   }
 
   Widget renderNextBtn() {
