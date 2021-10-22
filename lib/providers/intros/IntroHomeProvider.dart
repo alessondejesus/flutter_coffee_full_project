@@ -13,7 +13,7 @@ class IntroHomeProvider extends ChangeNotifier {
     widgetBuilder: StepWidgetBuilder.useDefaultTheme(
       texts: [
         'Hello, I\'m Flutter Intro.',
-        'I can help you quickly implement the Step By Step guide in the Flutter project.',
+        'Acesse suas configurações',
         'My usage is also very simple, you can quickly learn and use it through example and api documentation.',
         'In order to quickly implement the guidance, I also provide a set of out-of-the-box themes, I wish you all a happy use, goodbye!',
       ],
