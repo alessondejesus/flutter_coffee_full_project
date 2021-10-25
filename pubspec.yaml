@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^2.1.0
   font_awesome_flutter: ^9.2.0
+  after_layout: ^1.1.0
   #  persistent_bottom_nav_bar: ^4.0.2 (vou fazer um na mão mais customizado msm...)
   provider: ^6.0.1
   get: ^4.3.8

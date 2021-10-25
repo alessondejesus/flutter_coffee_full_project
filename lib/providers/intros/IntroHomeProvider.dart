@@ -3,19 +3,15 @@ import 'package:flutter_intro/flutter_intro.dart';
 
 class IntroHomeProvider extends ChangeNotifier {
   late Intro _intro = new Intro(
-    stepCount: 4,
+    stepCount: 5,
     maskClosable: true,
-    onHighlightWidgetTap: (introStatus) {
-      print(introStatus);
-    },
-
-    /// use defaultTheme
     widgetBuilder: StepWidgetBuilder.useDefaultTheme(
       texts: [
-        'Access your profile',
+        'Hi, Welcome! Click "next" to continue',
         'Get free coffees on your 8th order',
         'Choose your favorite coffee',
         'Complete your order by clicking here :)',
+        'Access your profile',
       ],
       buttonTextBuilder: (currPage, totalPage) {
         return currPage < totalPage - 1 ? 'Next' : 'Finish';
@@ -27,10 +23,6 @@ class IntroHomeProvider extends ChangeNotifier {
     );
 
   Intro get intro => _intro;
-
-  void config() {
-    notifyListeners();
-  }
 
   void start(BuildContext context) {
     _intro.start(context);

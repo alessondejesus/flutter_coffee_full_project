@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:after_layout/after_layout.dart';
 import 'package:coffee/providers/intros/IntroHomeProvider.dart';
 import 'package:coffee/screens/utils/remove_behavior_util.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,8 +9,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen>
+    with AfterLayoutMixin<HomeScreen> {
+  _initTutorial() async {
+    context.read<IntroHomeProvider>().start(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +77,7 @@ class HomeScreen extends StatelessWidget {
                                     key: context
                                         .watch<IntroHomeProvider>()
                                         .intro
-                                        .keys[0]),
+                                        .keys[4]),
                               ],
                             ),
                             flex: 1,
@@ -203,6 +214,7 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
         floatingActionButton: FloatingActionButton(
+          key: context.watch<IntroHomeProvider>().intro.keys[0],
           backgroundColor: Color.fromRGBO(50, 74, 89, 1),
           child: FaIcon(
             FontAwesomeIcons.question,
@@ -217,6 +229,12 @@ class HomeScreen extends StatelessWidget {
         return context.read<IntroHomeProvider>().stop();
       },
     );
+  }
+
+  @override
+  void afterFirstLayout(BuildContext context) async {
+    await Future.delayed(Duration(milliseconds: 1000));
+    _initTutorial();
   }
 }
 
