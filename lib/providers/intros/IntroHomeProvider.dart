@@ -12,10 +12,10 @@ class IntroHomeProvider extends ChangeNotifier {
     /// use defaultTheme
     widgetBuilder: StepWidgetBuilder.useDefaultTheme(
       texts: [
-        'Hello, I\'m Flutter Intro.',
-        'Acesse suas configurações',
-        'My usage is also very simple, you can quickly learn and use it through example and api documentation.',
-        'In order to quickly implement the guidance, I also provide a set of out-of-the-box themes, I wish you all a happy use, goodbye!',
+        'Access your profile',
+        'Get free coffees on your 8th order',
+        'Choose your favorite coffee',
+        'Complete your order by clicking here :)',
       ],
       buttonTextBuilder: (currPage, totalPage) {
         return currPage < totalPage - 1 ? 'Next' : 'Finish';
